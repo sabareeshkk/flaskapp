@@ -16,20 +16,18 @@ braintree.Configuration.configure(
 @app.route("/")
 def hello():
     result = braintree.Customer.create({
-            "id": "sabareeshk",
-            "company": "Some company",
+            "company": "rawdata",
             "email": "john.doe@example.com",
             "fax": "123-555-1212",
-            "first_name": "John",
-            "last_name": "Doe",
+            "first_name": "sabareeshk",
+            "last_name": "rawdata",
             "phone": "123-555-1221",
             "website": "http://www.example.com",
             "credit_card": {
-                "cardholder_name": "John Doe",
+                "cardholder_name": "sabareeshk",
                 "cvv": "123",
                 "expiration_date": "12/2012",
                 "number": "4111111111111111",
-                "token": "sab",
                 "billing_address": {
                     "first_name": "John",
                     "last_name": "Doe",
@@ -46,7 +44,8 @@ def hello():
                 }
             }
         })
-    print result
+    print result.customer.id
+    print result.customer.credit_cards[0].token
     return render_template('index.html', result=result)
 
 
@@ -107,14 +106,13 @@ def checkout():
 
         result = braintree.Transaction.sale({
         "amount": "10000.00",
-        "order_id": "order id",
         "merchant_account_id": "blue_ladders_store",
         "service_fee_amount": '100',
         # "credit_card": {
         #             "number": "4111111111111111",
         #             "expiration_date": "12/2012"
         #         },
-        "customer_id": "sabareeshk",
+        "customer_id": "31070679",
         "options": {
             "submit_for_settlement": True,
             "store_in_vault_on_success": True
