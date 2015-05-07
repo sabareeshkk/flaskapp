@@ -110,10 +110,11 @@ def checkout():
         "order_id": "order id",
         "merchant_account_id": "blue_ladders_store",
         "service_fee_amount": '100',
-        "credit_card": {
-                    "number": "4111111111111111",
-                    "expiration_date": "12/2012"
-                },
+        # "credit_card": {
+        #             "number": "4111111111111111",
+        #             "expiration_date": "12/2012"
+        #         },
+        "customer_id": "sabareeshk",
         "options": {
             "submit_for_settlement": True,
             "store_in_vault_on_success": True
