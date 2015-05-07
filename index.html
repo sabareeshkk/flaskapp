@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+   <div id="container">
+            <form action="/client_token">
+                <h1>Create Logon</h1>
+                <div class="line"><label for="username">Username *: </label><input type="text" id="username" /></div>
+                <div class="line"><label for="cardnumber">postal code</label><input type="text" id="username"/></div>
+                <!-- You may want to consider adding a "confirm" password box also -->
+                <div class="line"><label for="dob">Date of Birth </label><input type="text" id="dob" /></div>
+                <div class="line submit"><input type="submit" value="Submit" /></div>
+            </form>
+        </div>
+</body>
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+</html>
